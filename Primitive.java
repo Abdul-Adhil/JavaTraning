@@ -14,7 +14,7 @@ public class Primitive {
         System.out.println(p2);
         System.out.println(p3);
         System.out.println(p4);
-        // System.out.println(p5);
+
         System.out.println(p6);
         System.out.println(p7);
         System.out.println(p8);
