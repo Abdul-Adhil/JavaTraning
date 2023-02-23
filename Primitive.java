@@ -1,23 +1,23 @@
+//D1 - 2
 public class Primitive {
 
-    static int p1;
-    static long p2;
-    static float p3;
-    static double p4;
-    static boolean p6;
-    static short p7;
-    static byte p8;
+    static int int_eger;
+    static long lo_ng;
+    static float flo_at;
+    static double dou_ble;
+    static boolean bo_olean;
+    static short sho_rt;
+    static byte by_te;
 
     public static void main(String[] args) {
 
-        System.out.println(p1);
-        System.out.println(p2);
-        System.out.println(p3);
-        System.out.println(p4);
-
-        System.out.println(p6);
-        System.out.println(p7);
-        System.out.println(p8);
+        System.out.println(int_eger);
+        System.out.println(lo_ng);
+        System.out.println(flo_at);
+        System.out.println(dou_ble);
+        System.out.println(bo_olean);
+        System.out.println(sho_rt);
+        System.out.println(by_te);
     }
 
 }
