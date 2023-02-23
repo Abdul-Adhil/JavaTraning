@@ -1,17 +1,19 @@
+
+//Prg D1 - 15
 import java.util.Scanner;
 import java.lang.Math;
 
 public class AmrPerPali {
 
-    static void isArmstrongNo(int n) {
+    static void isArmstrongNo(int number) {
         int digit = 0, last = 0, sum = 0;
-        int temp = n;
+        int temp = number;
 
         while (temp > 0) {
             temp = temp / 10;
             digit++;
         }
-        temp = n;
+        temp = number;
         while (temp > 0) {
 
             last = temp % 10;
@@ -20,49 +22,70 @@ public class AmrPerPali {
             temp = temp / 10;
 
         }
-        if (n == sum)
-            System.out.println(n + " is Armstrong Number");
+        if (number == sum)
+            System.out.println(number + " is Armstrong Number!!");
         else
-            System.out.println(n + " is not an Amrstrong Number");
+            System.out.println(number + " is not an Amrstrong Number!!");
 
     }
 
-    static void isPalindrome(int n) {
-        int r = 0;
+    static void isPalindrome(int number) {
+        int reverse = 0;
         int sum = 0;
-        int temp = n;
+        int temp = number;
 
-        while (n > 0) {
-            r = n % 10;
-            sum = (sum * 10) + r;
-            n = n / 10;
+        while (number > 0) {
+            reverse = number % 10;
+            sum = (sum * 10) + reverse;
+            number = number / 10;
         }
 
         if (temp == sum)
-            System.out.println(temp + " is Palindrome");
+            System.out.println(temp + " is Palindrome!!");
         else
-            System.out.println(temp + " is not an Palindrome");
+            System.out.println(temp + " is not an Palindrome!!");
 
     }
 
-    static void isPerfectNo(int n) {
+    static void isPerfectNo(int number) {
         int sum = 0;
-        int temp = n;
-        for (int i = 1; i <= n / 2; i++) {
-            if (n % i == 0)
+        int temp = number;
+        for (int i = 1; i <= number / 2; i++) {
+            if (number % i == 0)
                 sum += i;
         }
-        if (n == sum)
-            System.out.println(n + " is a Perfect Number");
+        if (number == sum)
+            System.out.println(number + " is a Perfect Number!!");
         else
-            System.out.println(n + " is not a Perfect Number");
+            System.out.println(number + " is not a Perfect Number!!");
     }
 
     public static void main(String[] args) {
+        int number;
         Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        isArmstrongNo(n);
-        isPerfectNo(n);
-        isPalindrome(n);
+
+        System.out.println("Enter 1 for Armstrong Number");
+        System.out.println("Enter 2 for Perfect Number");
+        System.out.println("Enter 3 for Palindrome Number");
+        int option = scan.nextInt();
+
+        switch (option) {
+
+            case 1:
+                System.out.println("Enter the Number");
+                number = scan.nextInt();
+                isArmstrongNo(number);
+            case 2:
+                System.out.println("Enter the Number");
+                number = scan.nextInt();
+                isPerfectNo(number);
+
+            case 3:
+                System.out.println("Enter the Number");
+                number = scan.nextInt();
+                isPalindrome(number);
+
+        }
+
     }
 }

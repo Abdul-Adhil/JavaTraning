@@ -1,3 +1,5 @@
+
+//D3 -2
 import java.util.Scanner;
 
 public class Calculate {
@@ -31,13 +33,16 @@ public class Calculate {
         System.out.println("Enter the radius of the sphere:");
         int radi = scan.nextInt();
         Sphere sphere = new Sphere(radi);
-        System.out.println(sphere.volume());
+        System.out.println("Volume of Sphere: " + sphere.volume());
+        System.out.println("Area of Sphere: " + sphere.area());
 
         // Cuboid
         System.out.println("Enter the radius of the cuboid:");
         int side = scan.nextInt();
         Cuboid cuboid = new Cuboid(side);
-        System.out.println(cuboid.volume());
+
+        System.out.println("Volume of cuboid: " + cuboid.volume());
+        System.out.println("Area of cuboid: " + cuboid.area());
 
     }
 }
@@ -103,7 +108,7 @@ class Triangle implements CalcArea {
 
 }
 
-class Sphere implements CalcVol {
+class Sphere implements CalcVol, CalcArea {
 
     private int radi;
 
@@ -116,9 +121,14 @@ class Sphere implements CalcVol {
         return (4 / 3) * 3.14 * this.radi * this.radi * this.radi;
 
     }
+
+    @Override
+    public double area() {
+        return 3.14 * this.radi * this.radi;
+    }
 }
 
-class Cuboid implements CalcVol {
+class Cuboid implements CalcVol, CalcArea {
 
     private int side;
 
@@ -131,5 +141,10 @@ class Cuboid implements CalcVol {
 
         return this.side * this.side * this.side;
 
+    }
+
+    @Override
+    public double area() {
+        return this.side * this.side;
     }
 }

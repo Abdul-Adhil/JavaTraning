@@ -1,3 +1,4 @@
+//D2 - 8
 public class Singleton {
     public static void main(String[] args) {
         SingletonClass si = SingletonClass.getInstance();

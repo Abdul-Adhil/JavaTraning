@@ -1,3 +1,4 @@
+//D3 - 3
 public class Stack {
     public static void main(String[] args) throws Exception {
         FixedStack fixed = new FixedStack(3);
@@ -18,7 +19,7 @@ public class Stack {
         System.out.println();
         System.out.println("Dynamic Stack");
 
-        DynamicStack dynamic = new DynamicStack(15);
+        DynamicStack dynamic = new DynamicStack(4);
         dynamic.push(2);
         dynamic.push(9);
         dynamic.push(7);
@@ -34,12 +35,14 @@ public class Stack {
     }
 }
 
-interface StackMethod {
+interface StackMethod { // interface - used to group related methods with empty bodies
+    // hide certain details and only show the important details of an
+    // object(interface).
     void push(int value);
 
-    void pop();
+    public void pop();
 
-    void printElement();
+    public void printElement();
 }
 
 class FixedStack implements StackMethod {
@@ -54,7 +57,6 @@ class FixedStack implements StackMethod {
         this.top = -1;
     }
 
-    @Override
     public void push(int value) {
         if (top >= this.stackSize)
             throw new IndexOutOfBoundsException("Stack size = " + stackSize);
@@ -63,7 +65,6 @@ class FixedStack implements StackMethod {
 
     }
 
-    @Override
     public void pop() {
         int popVal = this.fixedStack[top--];
 
@@ -90,7 +91,6 @@ class DynamicStack implements StackMethod {
         this.top = -1;
     }
 
-    @Override
     public void push(int value) {
         // System.out.println(top + " " + value);
 
@@ -101,7 +101,6 @@ class DynamicStack implements StackMethod {
 
     }
 
-    @Override
     public void pop() {
 
         int popVal = this.dynamicStack[top--];
@@ -117,12 +116,12 @@ class DynamicStack implements StackMethod {
     }
 
     private void increaseStackSize() {
-        int[] newStack = new int[this.stackSize * 2];
+        int[] newStack = new int[this.stackSize + 1];
         for (int i = 0; i < stackSize; i++) {
             newStack[i] = this.dynamicStack[i];
         }
         this.dynamicStack = newStack;
-        this.stackSize = this.stackSize * 2;
+        this.stackSize = this.stackSize + 1;
     }
 
 }

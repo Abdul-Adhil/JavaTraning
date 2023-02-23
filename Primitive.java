@@ -1,4 +1,4 @@
-//D1 - 2
+//Prg D1 - 2
 public class Primitive {
 
     static int int_eger;

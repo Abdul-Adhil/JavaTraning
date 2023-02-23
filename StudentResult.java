@@ -1,3 +1,4 @@
+//D2 -14
 public class StudentResult {
     public static void main(String[] args) {
         Result result = new Result();
