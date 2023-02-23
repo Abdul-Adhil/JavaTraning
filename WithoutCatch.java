@@ -1,7 +1,7 @@
 public class WithoutCatch {
 
     static void myMethod() {
-        throw new myException();
+        throw new MyException();
 
     }
 
@@ -10,6 +10,6 @@ public class WithoutCatch {
     }
 }
 
-class myException extends Exception {
+class MyException extends Exception {
     // Exception class
 }

@@ -15,11 +15,12 @@ public class LoopWithoutError {
                 int divisor = scan.nextInt();
 
                 try {
-                    double result = (double) Integer.parseInt(numerator) / divisor;
+                    float result = (float) Integer.parseInt(numerator) / divisor;
                     System.out.println("The Result = " + result);
 
                 } catch (Exception e) {
                     e.printStackTrace();
+                    System.out.println("helloo");
                 }
 
             }
