@@ -1,3 +1,4 @@
+//Prg 6
 public class Prg6 {
     public static void main(String[] args) {
 

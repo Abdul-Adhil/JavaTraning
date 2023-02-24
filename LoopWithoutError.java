@@ -1,3 +1,5 @@
+
+//Prg 7
 import java.util.Scanner;
 
 public class LoopWithoutError {

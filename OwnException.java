@@ -1,9 +1,10 @@
+//Prg 4
 class OwnException {
 
     public static void main(String[] args) {
         try {
-            throw new myException();
-        } catch (myException e) {
+            throw new MyException();
+        } catch (MyException e) {
 
             e.printStackTrace();// is a method used to handle exceptions and errors
             // prints the throwable along with other details like the line number and class
@@ -12,6 +13,6 @@ class OwnException {
     }
 }
 
-class myException extends Exception {
+class MyException extends Exception {
 
 }
