@@ -1,15 +1,38 @@
+
 //D2 -14
+import java.util.Scanner;
+
 public class StudentResult {
     public static void main(String[] args) {
-        Result result = new Result();
 
-        result.name = "Abdul Adhil";
-        result.roll = 102;
-        result.mark1 = 80;
-        result.mark2 = 85;
-        result.mark3 = 90;
+        Scanner scan = new Scanner(System.in);
 
-        result.markSheet();
+        System.out.println("Enter the number of data to be displayed :");
+        int numberOfData = scan.nextInt();
+
+        for (int iteration = 0; iteration < numberOfData; iteration++) {
+            Result result = new Result();
+
+            System.out.println("Enter the Name :");
+            String name = scan.next();
+
+            System.out.println("Enter the Rool number");
+            int roll = scan.nextInt();
+            System.out.println("Enter the Mark 1 :");
+            int mark1 = scan.nextInt();
+            System.out.println("Enter the Mark 2 :");
+            int mark2 = scan.nextInt();
+            System.out.println("Enter the Mark 3 :");
+            int mark3 = scan.nextInt();
+
+            result.name = name;
+            result.roll = roll;
+            result.mark1 = mark1;
+            result.mark2 = mark2;
+            result.mark3 = mark3;
+            result.markSheet();
+
+        }
 
     }
 
@@ -46,7 +69,7 @@ class Result extends Exam {
 
     public void total() {
 
-        totalMark += mark1 + mark2 + mark3;
+        totalMark += this.mark1 + this.mark2 + mark3;
         System.out.println("Total Mark: " + totalMark);
     }
 
