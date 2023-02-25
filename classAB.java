@@ -9,13 +9,13 @@ public class classAB {
 }
 
 class A {
-    public A() { // class to be instantiated from any where
+    A() { // class to be instantiated from any where
         System.out.println("Constructor of A");
     }
 }
 
 class B {
-    public B() {
+    B() {
         System.out.println("Constructor of B");
     }
 }

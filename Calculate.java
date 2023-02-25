@@ -75,8 +75,8 @@ class Circle implements CalcArea {
 class Square implements CalcArea {
     private int side;
 
-    public Square(int a) {
-        this.side = a;
+    public Square(int side) {
+        this.side = side;
     }
 
     @Override

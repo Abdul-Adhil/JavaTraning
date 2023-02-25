@@ -1,23 +1,24 @@
 //Prg D1 - 2
 public class Primitive {
 
-    static int int_eger;
-    static long lo_ng;
-    static float flo_at;
-    static double dou_ble;
-    static boolean bo_olean;
-    static short sho_rt;
-    static byte by_te;
+    static int Integer;
+    static char Char;
+    static long Long;
+    static float Float;
+    static double Double;
+    static boolean Boolean;
+    static short Short;
+    static byte Byte;
 
     public static void main(String[] args) {
 
-        System.out.println(int_eger);
-        System.out.println(lo_ng);
-        System.out.println(flo_at);
-        System.out.println(dou_ble);
-        System.out.println(bo_olean);
-        System.out.println(sho_rt);
-        System.out.println(by_te);
+        System.out.println(Integer);
+        System.out.println(Char);
+        System.out.println(Float);
+        System.out.println(Double);
+        System.out.println(Boolean);
+        System.out.println(Short);
+        System.out.println(Byte);
     }
 
 }

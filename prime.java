@@ -4,28 +4,30 @@ import java.util.Scanner;
 
 public class prime {
 
-    static void generatePrimeNo(int range) {
-        int flag;
-        for (int number = 1; number <= range; number++) {
-            if (number == 0 || number == 1)
-                continue;
-            flag = 1;
-            for (int iteration = 2; iteration <= number / 2; ++iteration) {
-                if (number % iteration == 0) {
-                    flag = 0;
-                    break;
-                }
-            }
-            if (flag == 1)
-                System.out.print(number + " ");
+    static boolean generatePrimeNo(int number) {
+
+        if (number <= 1) {
+            return false;
         }
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0)
+                return false;
+        }
+        return true;
+
     }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int range = scan.nextInt();
 
-        generatePrimeNo(range);
+        for (int i = 0; i < range; i++) {
+            if (generatePrimeNo(i)) {
+                System.out.print(i + " ");
+            }
+
+        }
 
     }
 

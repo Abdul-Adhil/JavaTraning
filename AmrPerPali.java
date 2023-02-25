@@ -75,15 +75,18 @@ public class AmrPerPali {
                 System.out.println("Enter the Number");
                 number = scan.nextInt();
                 isArmstrongNo(number);
+                break;
             case 2:
                 System.out.println("Enter the Number");
                 number = scan.nextInt();
                 isPerfectNo(number);
+                break;
 
             case 3:
                 System.out.println("Enter the Number");
                 number = scan.nextInt();
                 isPalindrome(number);
+                break;
 
         }
 
