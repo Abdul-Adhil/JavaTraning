@@ -28,6 +28,8 @@ class Alph {
         Scanner scan = new Scanner(System.in);
         char c = (char) scan.next().charAt(0);
 
+        scan.close();
+
         try {
             if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
                 count++;
