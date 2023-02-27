@@ -1,14 +1,9 @@
+import java.io.IOException;
+
 //Prg 1
 class IoException {
 
-    public static void main(String[] args) {
-        Io.myMethod();
-    }
-}
-
-class Io {
-
-    static void myMethod() {
+    static void myMethod() throws IOException {
         throw new IOException();
 
         // Exception in thread "main" java.lang.Error: Unresolved compilation problem:
@@ -16,4 +11,12 @@ class Io {
         // at IoException.myMethod(IoException.java:4)
     }
 
+    public static void main(String[] args) {
+        try {
+            myMethod();
+
+        } catch (Exception e) {
+
+        }
+    }
 }
