@@ -12,5 +12,10 @@ public class WithoutCatch {
 }
 
 class MyException extends Exception {
-    // Exception class
+
+    @Override
+    public String toString() {
+        return "MyException: Somethig went wrong";
+    }
+
 }

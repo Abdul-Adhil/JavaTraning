@@ -23,6 +23,8 @@ class Derived extends Base {
             Base base = new Base();
             base.myMethod();
 
+        } catch (ArithmeticException ae) {
+            System.out.println(ae);
         } catch (Exception error) {
             error.printStackTrace();
 
