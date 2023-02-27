@@ -14,7 +14,7 @@ class P7_count {
                         System.out.println(count / 10 + " - Ten Number");
                     }
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
 
             }

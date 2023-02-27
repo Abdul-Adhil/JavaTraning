@@ -1,5 +1,6 @@
 
 //D-5 p1
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -30,7 +31,7 @@ class Number {
         System.out.println("");
     }
 
-    synchronized public void even() {
+    public void even() {
         System.out.println("Even");
         for (int i = 0; i < 100; i++) {
             if (i % 2 == 0)

@@ -27,6 +27,10 @@ class MyThread extends Thread {
 
     StringBuffer buffer;
 
+    /**
+     * @param buffer This is the buffer object in main
+     */
+
     MyThread(StringBuffer buffer) {
         this.buffer = buffer;
     }

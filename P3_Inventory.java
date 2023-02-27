@@ -8,14 +8,19 @@ public class P3_Inventory {
         Inventory inventory = new Inventory();
 
         es.execute(() -> {
-            inventory.store();
-            inventory.store();
-            inventory.store();
+            inventory.sell();
+            inventory.sell();
+            inventory.sell();
+            inventory.sell();
+
         });
+
         es.execute(() -> {
-            inventory.sell();
-            inventory.sell();
-            inventory.sell();
+            inventory.store();
+            inventory.store();
+            inventory.store();
+            inventory.store();
+            inventory.store();
 
         });
 
@@ -35,6 +40,7 @@ class Inventory {
             try {
                 wait();
             } catch (Exception e) {
+                e.printStackTrace();
 
             }
         }
@@ -51,7 +57,7 @@ class Inventory {
             try {
                 wait();
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
 
         }

@@ -43,11 +43,12 @@ class DisplayTime {
     private String formate;
 
     public DisplayTime(int hour, int minute, int second) {
-        if (hour >= 12) {
+        if (hour > 12) {
             this.hour = hour - 12;
             this.formate = "PM";
-        }
-        // this.hour = hour;
+        } else
+            this.hour = hour;
+
         this.minute = minute;
         this.second = second;
 
@@ -69,7 +70,7 @@ class DisplayTime {
                 Thread.sleep(1000);
 
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
 
             notifyAll();
@@ -80,7 +81,7 @@ class DisplayTime {
                 wait();
 
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
 
         }
@@ -99,7 +100,7 @@ class DisplayTime {
                 Thread.sleep(1000);
 
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
 
             notifyAll();
@@ -110,7 +111,7 @@ class DisplayTime {
                 wait();
 
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
 
         }
@@ -129,7 +130,7 @@ class DisplayTime {
                     Thread.sleep(1000);
 
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
 
                 System.out.println(hour + ":" + minute + ":" + i + " " + formate);
@@ -144,6 +145,7 @@ class DisplayTime {
                 wait();
 
             } catch (Exception e) {
+                e.printStackTrace();
 
             }
 

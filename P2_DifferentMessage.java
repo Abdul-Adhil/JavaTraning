@@ -24,11 +24,19 @@ public class P2_DifferentMessage {
 }
 
 class Display {
+    /**
+     * This is the synchronized method which is used to display message
+     * 
+     * @param message.
+     * @return Nothing.
+     * @exception InterruptedException .
+     * @see IOException
+     */
 
     synchronized static public void message(String message) {
         System.out.print(message);
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
 
             e.printStackTrace();
