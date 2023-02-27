@@ -1,6 +1,13 @@
 //Prg 1
 class IoException {
 
+    public static void main(String[] args) {
+        Io.myMethod();
+    }
+}
+
+class Io {
+
     static void myMethod() {
         throw new IOException();
 
@@ -9,7 +16,4 @@ class IoException {
         // at IoException.myMethod(IoException.java:4)
     }
 
-    public static void main(String[] args) {
-        myMethod();
-    }
 }
