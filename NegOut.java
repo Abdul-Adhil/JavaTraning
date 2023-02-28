@@ -34,8 +34,8 @@ public class NegOut {
                 iteration++;
                 if (iteration == 10)
                     break;
-            } catch (InputMismatchException e) {
-                System.out.println("Enter a valid number....");
+            } catch (Exception e) {
+                System.out.println(e);
 
                 scan.next();// new piece of code which parses the wrong input and clears the //scanner for
                 // new input

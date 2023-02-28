@@ -3,7 +3,8 @@ import java.io.IOException;
 //Prg 1
 class IoException {
 
-    static void myMethod() throws IOException {
+    static void myMethod() {
+        // throws IOException
         throw new IOException();
 
         // Exception in thread "main" java.lang.Error: Unresolved compilation problem:
