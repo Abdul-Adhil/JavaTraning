@@ -30,7 +30,7 @@ class Display {
      * @param message.
      * @return Nothing.
      * @exception InterruptedException .
-     * @see IOException
+     * @see InterruptedException
      */
 
     synchronized static public void message(String message) {

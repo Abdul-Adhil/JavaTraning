@@ -47,7 +47,9 @@ class DisplayTime {
             this.hour = hour - 12;
             this.formate = "PM";
         } else
+
             this.hour = hour;
+        this.formate = "AM";
 
         this.minute = minute;
         this.second = second;
@@ -103,7 +105,7 @@ class DisplayTime {
                 e.printStackTrace();
             }
 
-            notifyAll();
+            notify();
 
         } else {
 
@@ -137,7 +139,7 @@ class DisplayTime {
             }
 
             second = i;
-            notifyAll();
+            notify();
 
         } else {
 
