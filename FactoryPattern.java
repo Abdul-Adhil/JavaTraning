@@ -1,12 +1,30 @@
+import java.util.Scanner;
+
 public class FactoryPattern {
     public static void main(String[] args) {
-        Car c = new Hatchback();
-        c.bodyType();
+        MahindraCarFactory carFactory = new MahindraCarFactory();
+        Scanner scan = new Scanner(System.in);
+        String car = scan.nextLine();
+        Car carType = carFactory.getInstance(car);
+        carType.bodyType();
+
     }
 
 }
 
-class CarFactory {
+class MahindraCarFactory {
+
+    public Car getInstance(String str) {
+
+        if (str.equals("Hatchback") || str.equals("hatchback")) {
+            return new Hatchback();
+        } else if (str.equals(" Sedan") || str.equals(" sedan")) {
+            return new Sedan();
+        } else {
+            return new PickupTrucks();
+        }
+
+    }
 
 }
 
@@ -19,7 +37,9 @@ class Hatchback implements Car {
     @Override
     public void bodyType() {
         System.out.println(
-                "!!!...Four doors along with an additional rear hatch that opens upward to access the boot space...!!!");
+                "!!!...Four doors along with an additional rear hatch that opens upward to access the boot space...!!! ");
+        String y = Character.toString(128_512);
+        System.out.println(y);
     }
 }
 
@@ -33,15 +53,15 @@ class Sedan implements Car {
 
 }
 
-class Suv implements Car {
+// class Suv implements Car {
 
-    @Override
-    public void bodyType() {
-        System.out.println(
-                "!!!...both passenger vehicles as well as off-roaders...!!!");
-    }
+// @Override
+// public void bodyType() {
+// System.out.println(
+// "!!!...both passenger vehicles as well as off-roaders...!!!🚗");
+// }
 
-}
+// }
 
 class PickupTrucks implements Car {
 
@@ -52,3 +72,7 @@ class PickupTrucks implements Car {
     }
 
 }
+
+// else if (str.equals(" Suv") || str.equals(" suv")) {
+// return new Suv();
+// }
