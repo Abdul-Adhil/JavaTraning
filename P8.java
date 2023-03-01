@@ -28,7 +28,10 @@ class MyThread extends Thread {
     StringBuffer buffer;
 
     /**
-     * @param buffer This is the buffer object in main
+     * this run method will increment the char of the buffer string to next
+     * the run method has object block
+     * 
+     * @param buffer object This is the buffer object in main
      */
 
     MyThread(StringBuffer buffer) {

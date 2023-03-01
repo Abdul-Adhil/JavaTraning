@@ -42,6 +42,19 @@ class DisplayTime {
     private int second;
     private String formate;
 
+    /**
+     * This is the synchronized method which is used to display the time by three
+     * thread passing one by one by wait() and notifyAll()
+     * 
+     * @param hour.
+     * @param minute.
+     * @param second.
+     * @return Nothing.
+     * @exception InterruptedException .
+     * @see InterruptedException
+     * 
+     */
+
     public DisplayTime(int hour, int minute, int second) {
         if (hour > 12) {
             this.hour = hour - 12;

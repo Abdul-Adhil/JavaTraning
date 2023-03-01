@@ -32,6 +32,18 @@ public class P3_Inventory {
 
 class Inventory {
 
+    /**
+     * This is the synchronized method which is used to store and sell the product
+     * in inventory
+     * when there is no product store() method add the product to inventory
+     * when there is atleast one product in inventory sell() method sell the product
+     * by wait() and notify()
+     * 
+     * @return Nothing.
+     *         .
+     * @see Exception
+     */
+
     int product = 0;
 
     synchronized public void store() {

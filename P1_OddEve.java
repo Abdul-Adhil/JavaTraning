@@ -22,6 +22,12 @@ public class P1_OddEve {
 }
 
 class Number {
+    /**
+     * This is the synchronized method which is used to odd and even numbers
+     * 
+     * @return Nothing.
+     * 
+     */
     synchronized public void odd() {
         System.out.println("Odd");
         for (int i = 0; i < 100; i++) {

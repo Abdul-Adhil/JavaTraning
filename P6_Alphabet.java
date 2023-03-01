@@ -1,5 +1,6 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class P6_Alphabet {
@@ -20,6 +21,17 @@ public class P6_Alphabet {
 }
 
 class Alph {
+
+    /**
+     * This method which is used to get value from the user and print the count and
+     * throw a own exception when non alphabet values are entered
+     * 
+     * 
+     * @return Nothing.
+     * @exception InputMismatchException .
+     * @see InputMismatchException
+     */
+
     int count = 0;
 
     void countAlphabet() {
