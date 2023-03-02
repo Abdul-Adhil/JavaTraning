@@ -13,38 +13,26 @@ public class NegOut {
             System.out.println("Enter marks of student " + (iteration + 1));
             try {
                 int mark = scan.nextInt();
-                if (mark < 0) {
-                    try {
-                        throw new OutOfRangeException("Its is a negative value");
-                    } catch (OutOfRangeException e) {
-                        System.out.println(e);
 
-                        scan.next();
+                if (mark < 0)
+                    throw new OutOfRangeException("Its is a negative value");
 
-                    }
-                }
-                if (mark > 100) {
-                    try {
-                        throw new OutOfRangeException("Value is above 100");
-                    } catch (OutOfRangeException e) {
-                        System.out.println(e);
-
-                        scan.next();
-
-                    }
-                }
+                if (mark > 100)
+                    throw new OutOfRangeException("Value is above 100");
 
                 total += mark;
                 iteration++;
-            } catch (Exception e) {
-                System.out.println(e);
-
-                scan.next();// new piece of code which parses the wrong input and clears the //scanner for
-                // new input
 
             }
 
+            catch (OutOfRangeException e) {
+                System.out.println(e);
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
+
         System.out.println("The Total = " + (double) total / 10);
     }
 
