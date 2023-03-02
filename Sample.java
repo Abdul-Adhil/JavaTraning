@@ -1,126 +1,152 @@
-import java.util.Scanner;
 
 public class Sample {
 
-    public static void main(String[] args) throws DogExceptions {
+    public static void main(String[] args) {
+        UniversalRemote genie = new UniversalRemote();
 
-        Child baby = new Child();
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter  item...:");
-        String item = scan.next();
-        Dog tiger = new Dog();
-        baby.playWithDog(tiger, item);
+        Tv tv = new Tv();
+        SetTopBox sbox = new SetTopBox();
+        SoundSystem ss = new SoundSystem();
+        VGame vgame = new VGame();
+
+        Command newscommand = new NewsChannelCommand(tv, sbox, ss, vgame);
+        Command serialcommand = new SerialChannelCommand(tv, sbox, ss, vgame);
+        Command ttgamecommand = new TTGameCommand(tv, sbox, ss, vgame);
+
+        genie.assignCommand(1, ttgamecommand);
+        genie.assignCommand(2, newscommand);
+        genie.assignCommand(3, serialcommand);
+
+        genie.executeCommand(4);
     }
 }
 
-class Child {
-    public void playWithDog(Dog dog, String item) {
-        System.out.println("before exception...");
-        try {
-            dog.play(item);
-        } catch (DogExceptions dee) {
-            dee.printStackTrace();
-            dee.visit();
-        }
-        System.out.println("after exception....");
-    }
-}
+class UniversalRemote {
+    Command c[] = new Command[5];
 
-class Dog {
-    public void play(String item) throws DogExceptions {
-        if (item.equals("stick")) {
-            throw new DogBiteException("you beat I bite....");
-        } else if (item.equals("stone")) {
-            throw new DogBarkException("you throw I catch and bark.....");
-        } else if (item.equals("biscuit")) {
-            throw new DogHappyException("yummy yummy..........:i love biscuits...");
+    public UniversalRemote() {
+        for (int i = 0; i < 5; i++) {
+            c[i] = new DummyCommand();
         }
     }
-}
 
-abstract class Handler911 {
-    public abstract void handle(DogBiteException dbe);
-
-    public abstract void handle(DogBarkException dbee);
-
-    public abstract void handle(DogHappyException dbee);
-}
-
-class Handler911Impl extends Handler911 {
-    @Override
-    public void handle(DogBarkException dbee) {
-        System.out.println("barking dogs seldom bite...no worries...");
+    public void executeCommand(int slot) {
+        c[slot].execute();
     }
 
-    @Override
-    public void handle(DogBiteException dbe) {
-        System.out.println("take him to hospital........");
-    }
-
-    @Override
-    public void handle(DogHappyException dbee) {
-        System.out.println("good sign...have fun with dog....play around....");
+    public void assignCommand(int slot, Command command) {
+        c[slot] = command;
     }
 }
 
-abstract class DogExceptions extends Exception {
-    public abstract void visit();
+abstract class Command {
+    Tv tv;
+    SetTopBox sbox;
+    SoundSystem ss;
+    VGame vgame;
+
+    public Command() {
+        // TODO Auto-generated constructor stub
+    }
+
+    public Command(Tv tv, SetTopBox sbox, SoundSystem ss, VGame vgame) {
+        this.tv = tv;
+        this.sbox = sbox;
+        this.ss = ss;
+        this.vgame = vgame;
+    }
+
+    public abstract void execute();
 }
 
-class DogBiteException extends DogExceptions {
-    String msg;
-
-    public DogBiteException(String msg) {
-        this.msg = msg;
-    }
-
+class DummyCommand extends Command {
     @Override
-    public String toString() {
-        return msg;
-    }
-
-    @Override
-    public void visit() {
-        Handler911 dbh = new Handler911Impl();
-        dbh.handle(this);
-    }
-}
-
-class DogBarkException extends DogExceptions {
-    String msg;
-
-    public DogBarkException(String msg) {
-        this.msg = msg;
-    }
-
-    @Override
-    public String toString() {
-        return msg;
-    }
-
-    @Override
-    public void visit() {
-        Handler911 dbh = new Handler911Impl();
-        dbh.handle(this);
+    public void execute() {
+        System.out.println("i am a dummy slot.....yet to be assigned a process...");
     }
 }
 
-class DogHappyException extends DogExceptions {
-    String msg;
-
-    public DogHappyException(String msg) {
-        this.msg = msg;
+class NewsChannelCommand extends Command {
+    public NewsChannelCommand(Tv tv, SetTopBox sbox, SoundSystem ss, VGame vgame) {
+        super(tv, sbox, ss, vgame);
     }
 
     @Override
-    public String toString() {
-        return msg;
+    public void execute() {
+        System.out.println("the news channel process started...");
+        tv.av1();
+        sbox.newChannel();
+        ss.increaseVolume();
+        System.out.println("enjoy the news channel....");
+    }
+}
+
+class SerialChannelCommand extends Command {
+    public SerialChannelCommand(Tv tv, SetTopBox sbox, SoundSystem ss, VGame vgame) {
+        super(tv, sbox, ss, vgame);
     }
 
     @Override
-    public void visit() {
-        Handler911 dbh = new Handler911Impl();
-        dbh.handle(this);
+    public void execute() {
+        System.out.println("the serial channel process started...");
+        tv.av1();
+        sbox.serialChannel();
+        ss.increaseVolume();
+        System.out.println("enjoy the saas bahu serial channel....");
+    }
+}
+
+class TTGameCommand extends Command {
+    public TTGameCommand(Tv tv, SetTopBox sbox, SoundSystem ss, VGame vgame) {
+        super(tv, sbox, ss, vgame);
     }
 
+    @Override
+    public void execute() {
+        System.out.println("the ttgame process started...");
+        tv.av2();
+        vgame.ttgame();
+        ss.decreaseVolume();
+        System.out.println("enjoy the tt game....");
+    }
+}
+
+class Tv {
+    public void av1() {
+        System.out.println("av1 mode...");
+    }
+
+    public void av2() {
+        System.out.println("av2 mode...");
+    }
+}
+
+class SetTopBox {
+    public void newChannel() {
+        System.out.println("news channel...");
+    }
+
+    public void serialChannel() {
+        System.out.println("mamiyar marumaga serial channel...");
+    }
+}
+
+class SoundSystem {
+    public void increaseVolume() {
+        System.out.println("volume increased...");
+    }
+
+    public void decreaseVolume() {
+        System.out.println("volume decreased...");
+    }
+}
+
+class VGame {
+    public void ttgame() {
+        System.out.println("tt game started...");
+    }
+
+    public void snooker() {
+        System.out.println("snooker game...");
+    }
 }
