@@ -17,6 +17,7 @@ class IoException {
             myMethod();
 
         } catch (Exception e) {
+            e.printStackTrace();
 
         }
     }

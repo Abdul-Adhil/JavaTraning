@@ -1,70 +1,66 @@
 
 //prg 9
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 public class NegOut {
 
-    public static void main(String[] args) throws NegativeException {
+    public static void main(String[] args) throws OutOfRangeException {
         Scanner scan = new Scanner(System.in);
         int total = 0;
         int iteration = 0;
-        while (iteration <= 10) {
+        while (iteration < 10) {
             System.out.println("Enter marks of student " + (iteration + 1));
             try {
                 int mark = scan.nextInt();
                 if (mark < 0) {
                     try {
-                        throw new NegativeException();
-                    } catch (NegativeException e) {
+                        throw new OutOfRangeException("Its is a negative value");
+                    } catch (OutOfRangeException e) {
                         System.out.println(e);
-                        continue;
+
+                        scan.next();
+
                     }
                 }
                 if (mark > 100) {
                     try {
-                        throw new OutOfRangeException();
+                        throw new OutOfRangeException("Value is above 100");
                     } catch (OutOfRangeException e) {
                         System.out.println(e);
-                        continue;
+
+                        scan.next();
+
                     }
                 }
 
                 total += mark;
                 iteration++;
-                if (iteration == 10)
-                    break;
             } catch (Exception e) {
                 System.out.println(e);
 
                 scan.next();// new piece of code which parses the wrong input and clears the //scanner for
                 // new input
-                continue;
 
             }
 
         }
-        System.out.println("The Total = " + (double) total / 10.0);
-    }
-
-}
-
-class NegativeException extends Exception {
-
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return "Its is a negative value";
+        System.out.println("The Total = " + (double) total / 10);
     }
 
 }
 
 class OutOfRangeException extends Exception {
+    String msg;
+
+    OutOfRangeException(String message) {
+        msg = message;
+    }
 
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "Value is out of range";
+        return msg;
     }
 
 }

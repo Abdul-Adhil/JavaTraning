@@ -3,7 +3,7 @@ class OwnException {
 
     public static void main(String[] args) {
         try {
-            throw new MyException();
+            throw new MyException("MyException: Something went wrong");
         } catch (MyException e) {
 
             System.out.println(e);
@@ -15,10 +15,15 @@ class OwnException {
 }
 
 class MyException extends Exception {
+    String msg;
+
+    MyException(String message) {
+        msg = message;
+    }
 
     @Override
     public String toString() {
-        return "MyException: Something went wrong";
+        return msg;
     }
 
 }

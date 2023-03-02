@@ -1,6 +1,5 @@
 
 //Prg 3
-import java.io.IOException;
 
 public class Replace {
     public void mth1() {

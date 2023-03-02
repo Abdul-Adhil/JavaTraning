@@ -13,8 +13,8 @@ public class Sample {
 
     public void mth2() {
         try {
-            // throw new IOException();
-            return;
+            throw new IOException();
+            // return;
 
         } catch (Exception e) {
             System.out.println("catch-mtch2");

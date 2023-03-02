@@ -2,7 +2,12 @@
 public class Prg6 {
     public static void main(String[] args) {
 
-        Base derived = new Derived();
+        try {
+            Base derived = new Derived();
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
 
     }
 }
@@ -17,18 +22,10 @@ class Base {
 
 class Derived extends Base {
 
-    public Derived() {
+    public Derived() throws Exception {
 
-        try {
-            Base base = new Base();
-            base.myMethod();
-
-        } catch (ArithmeticException ae) {
-            System.out.println(ae);
-        } catch (Exception error) {
-            error.printStackTrace();
-
-        }
+        Base base = new Base();
+        base.myMethod();
 
     }
 
