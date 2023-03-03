@@ -34,7 +34,7 @@ public class Files {
                 deleteFile(myFile);
 
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
+
                 e.printStackTrace();
             }
 
@@ -60,7 +60,7 @@ public class Files {
                 Thread.sleep(7000);
                 renameFile(myFile1);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
+
                 e.printStackTrace();
             }
 

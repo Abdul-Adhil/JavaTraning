@@ -1,0 +1,1 @@
+This is a java program to read a file and print the content in the console
