@@ -1,4 +1,4 @@
-package CopySrcDesP6;
+package sample;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,8 +8,8 @@ public class CopySrcDes {
     public static void main(String[] args) {
 
         try {
-            FileReader fr = new FileReader("/Users/abduladhil/vs-code/Java-Program/CopySrcDesP6/srcFile.txt");
-            FileWriter fw = new FileWriter("/Users/abduladhil/vs-code/Java-Program/CopySrcDes/desFile.txt");
+            FileReader fr = new FileReader("/Users/abduladhil/vs-code/Java-Program/sample/srcFile.txt");
+            FileWriter fw = new FileWriter("/Users/abduladhil/vs-code/Java-Program/sample/desFile.txt");
 
             int i;
 
