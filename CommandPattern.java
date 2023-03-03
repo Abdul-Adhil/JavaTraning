@@ -19,7 +19,7 @@ public class CommandPattern {
 
         genie.executeCommand(2);
 
-        // genie.executeCommand(4);
+        genie.executeCommand(4);
     }
 }
 

@@ -1,9 +1,11 @@
 public class Strategy {
 
     public static void main(String[] args) {
+        // condition
         BadPaintBrush bbrush = new BadPaintBrush();
         bbrush.doPaint(1);
 
+        //
         GoodPaintBrush gbrush = new GoodPaintBrush();
         gbrush.paint = new RedPaint();
         gbrush.doPaint();
@@ -37,25 +39,25 @@ class GoodPaintBrush {
     }
 }
 
-abstract class Paint {
+interface Paint {
     public abstract void colour();
 }
 
-class RedPaint extends Paint {
+class RedPaint implements Paint {
     @Override
     public void colour() {
         System.out.println("red colour...");
     }
 }
 
-class BluePaint extends Paint {
+class BluePaint implements Paint {
     @Override
     public void colour() {
         System.out.println("blue colour...");
     }
 }
 
-class GreenPaint extends Paint {
+class GreenPaint implements Paint {
     @Override
     public void colour() {
         System.out.println("green colour..");

@@ -1,12 +1,15 @@
+import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 
 public class FactoryPattern {
-    public static void main(String[] args) {
-        MahindraCarFactory carFactory = new MahindraCarFactory();
+    public static void main(String[] args) throws Exception {
+
         Scanner scan = new Scanner(System.in);
         String car = scan.nextLine();
-        Car carType = carFactory.getInstance(car);
-        carType.bodyType();
+        MahindraCarFactory carFactory = new MahindraCarFactory();
+        CarType carType = carFactory.getInstance(car);
+
+        carType.myCar().bodyType();
 
     }
 
@@ -14,18 +17,53 @@ public class FactoryPattern {
 
 class MahindraCarFactory {
 
-    public Car getInstance(String str) {
+    public CarType getInstance(String str) throws Exception {
 
-        if (str.equals("Hatchback") || str.equals("hatchback")) {
-            return new Hatchback();
-        } else if (str.equals(" Sedan") || str.equals(" sedan")) {
-            return new Sedan();
-        } else {
-            return new PickupTrucks();
-        }
+        CarType type = (CarType) Class.forName(str).getConstructor().newInstance();
+        type.myCar();
+        return type;
 
     }
 
+}
+
+interface CarType {
+    public Car myCar();
+}
+
+class HatchbackCar implements CarType {
+
+    public HatchbackCar() {
+    }
+
+    @Override
+    public Car myCar() {
+        return new Hatchback();
+    }
+}
+
+class SedanCar implements CarType {
+
+    public SedanCar() {
+    }
+
+    @Override
+    public Car myCar() {
+
+        return new Sedan();
+
+    }
+}
+
+class PickupTrucksCar implements CarType {
+
+    public PickupTrucksCar() {
+    }
+
+    @Override
+    public Car myCar() {
+        return new PickupTrucks();
+    }
 }
 
 interface Car {
