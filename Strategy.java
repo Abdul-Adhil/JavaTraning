@@ -1,11 +1,17 @@
 public class Strategy {
 
     public static void main(String[] args) {
+        /*
+         * this object output is created by conditional statement
+         */
         // condition
         BadPaintBrush bbrush = new BadPaintBrush();
         bbrush.doPaint(1);
 
         //
+        /*
+         * this object output is created by class
+         */
         GoodPaintBrush gbrush = new GoodPaintBrush();
         gbrush.paint = new RedPaint();
         gbrush.doPaint();

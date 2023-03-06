@@ -1,7 +1,13 @@
-
 public class Sample {
-
     public static void main(String[] args) {
+        /*
+         * This will be the universal controller which makes the most complex thing
+         * easier
+         * it create tv,set up box, sound system, video games object and pass that
+         * object as a command to command class
+         * and assign command assign to the command object created
+         * and execute all the command via executeCommand() method
+         */
         UniversalRemote genie = new UniversalRemote();
 
         Tv tv = new Tv();
@@ -21,6 +27,9 @@ public class Sample {
     }
 }
 
+/*
+ * universal remote class to store and execute the command
+ */
 class UniversalRemote {
     Command c[] = new Command[5];
 

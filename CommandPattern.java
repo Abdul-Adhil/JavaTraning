@@ -2,6 +2,10 @@
 public class CommandPattern {
 
     public static void main(String[] args) {
+        /*
+         * genie is a universalRemote which can able to work based on the object we
+         * passed
+         */
         UniversalRemote genie = new UniversalRemote();
 
         Tv tv = new Tv();
@@ -24,7 +28,7 @@ public class CommandPattern {
 }
 
 class UniversalRemote {
-    Command c[] = new Command[5];
+    Command c[] = new Command[6];
 
     public UniversalRemote() {
         for (int i = 0; i < 5; i++) {
@@ -41,11 +45,21 @@ class UniversalRemote {
     }
 }
 
+/*
+ * This is an abstract class for commands
+ * This class is extended by
+ * NewsChannelCommand,TTGameCommand,SetTopBox,SerialChannelCommand classes
+ * 
+ * @param tv, sbox, soundsystem, vgames
+ */
 abstract class Command {
     Tv tv;
     SetTopBox sbox;
     SoundSystem ss;
     VGame vgame;
+
+    public Command() {
+    }
 
     public Command(Tv tv, SetTopBox sbox, SoundSystem ss, VGame vgame) {
         this.tv = tv;
@@ -57,12 +71,17 @@ abstract class Command {
     public abstract void execute();
 }
 
-// class DummyCommand extends Command {
-// @Override
-// public void execute() {
-// System.out.println("i am a dummy slot.....yet to be assigned a process...");
-// }
-// }
+class DummyCommand extends Command {
+
+    public DummyCommand() {
+        super();
+    }
+
+    @Override
+    public void execute() {
+        System.out.println("i am a dummy slot.....yet to be assigned a process...");
+    }
+}
 
 class NewsChannelCommand extends Command {
     public NewsChannelCommand(Tv tv, SetTopBox sbox, SoundSystem ss, VGame vgame) {

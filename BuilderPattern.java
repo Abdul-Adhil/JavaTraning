@@ -1,5 +1,9 @@
 public class BuilderPattern {
     public static void main(String[] args) {
+        /*
+         * This main method create a bike object using the bike builder with custom
+         * value we set like cc, mirror, seat
+         */
         // Bike b = new BikeBuilder().setCc(150).getBike();
         Bike b = new Bike.BikeBuilder().setCc(150).getBike();
         System.out.println(b);
@@ -53,6 +57,13 @@ public class BuilderPattern {
 // }
 // }
 
+/*
+ * This is a bike class which has
+ * 
+ * @param colour,mirror,seat,protection,tyre,cc
+ * 
+ * @return Bike object in toString method
+ */
 class Bike {
 
     private String colour;
@@ -61,7 +72,6 @@ class Bike {
     private String protection;
     private String tyre;
     private int cc;
-    private String travel;
 
     public Bike(String colour, String mirror, String seat, String protection, String tyre, int cc) {
         super();
@@ -80,10 +90,11 @@ class Bike {
                 + ", tyre=" + tyre + ", cc=" + cc + "]";
     }
 
-    public void setTravel(String travel) {
-        this.travel = travel;
-    }
-
+    /*
+     * This is a bike builder which has setters to the variable
+     * 
+     * @return bike object to main
+     */
     static class BikeBuilder {
 
         private String colour;

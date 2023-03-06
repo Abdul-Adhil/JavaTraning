@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class VisitorPattern {
+    /*
+     * creating a man object
+     * and creating a problem object and pass into the method of the problem class
+     */
     public static void main(String[] args) {
 
         People man = new People();
@@ -16,6 +20,11 @@ public class VisitorPattern {
 
 }
 
+/*
+ * people class
+ * 
+ * @param prb, typrPrb
+ */
 class People {
     public void problemHappens(Problem prb, String typePrb) {
         try {
@@ -28,6 +37,14 @@ class People {
 
     }
 }
+
+/*
+ * Problem class
+ * 
+ * @param typePrb
+ * 
+ * @throws ProblemException.
+ */
 
 class Problem {
     public void problemType(String typePrb) throws ProblemException {
@@ -53,6 +70,10 @@ abstract class Service911 {
     public abstract void handle(CrimeProblemException cp);
 }
 
+/*
+ * This is the handeler service class which will handel the exception thrown by
+ * the Problem class
+ */
 class HandlerService extends Service911 {
 
     @Override
@@ -71,6 +92,13 @@ class HandlerService extends Service911 {
     }
 
 }
+
+/*
+ * custom Exception FireProblemException, AccidentProblemException,
+ * CrimeProblemException
+ * with a visit() method which will visit the handeler service and provide the
+ * services related to that problem
+ */
 
 abstract class ProblemException extends Exception {
     public abstract void visit();

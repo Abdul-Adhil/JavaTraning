@@ -11,6 +11,15 @@ public class Singleton {
 
 }
 
+/**
+ * This is the singleton class which return a singleton object.
+ * 
+ * @param args Unused.
+ * @return singleton object.
+ * 
+ * 
+ */
+
 class SingletonClass {
 
     private static SingletonClass singletonClass = null;

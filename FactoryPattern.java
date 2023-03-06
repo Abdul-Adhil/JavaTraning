@@ -1,4 +1,3 @@
-import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 
 public class FactoryPattern {
@@ -6,6 +5,8 @@ public class FactoryPattern {
 
         Scanner scan = new Scanner(System.in);
         String car = scan.nextLine();
+
+        scan.close();
         MahindraCarFactory carFactory = new MahindraCarFactory();
         CarType carType = carFactory.getInstance(car);
 
