@@ -4,7 +4,6 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-
 public class Lorry {
 
     public static void main(String[] args) {
@@ -40,7 +39,16 @@ public class Lorry {
         if (availableHour > 8)
             System.out.println("started time: " + startTime);
 
+        /*
+         * if the coveredDistance is less than distance it will keep on looping
+         */
+
         while (coveredDistance < tempDistance) {
+
+            /*
+             * if it is sunday or it is independence day or republic day if() condition will
+             * skip that day
+             */
             DayOfWeek day = date.getDayOfWeek();
 
             if (day.getValue() == 7 || (date.getMonthValue() == 1 && date.getDayOfMonth() == 26)
@@ -51,6 +59,11 @@ public class Lorry {
                 continue;
 
             }
+
+            /*
+             * if the hour is greater than 8 it will get inside the for() loop and plus the
+             * time and add the covered distance
+             */
 
             if (availableHour > 8) {
                 int i;
@@ -63,6 +76,10 @@ public class Lorry {
                     distance = distanceNeedToCover;
 
                 }
+                /*
+                 * if condition checks whether 8hr a day completed. if 8hr work completed it
+                 * will update the time and date
+                 */
                 if (i == 8) {
                     date = date.plusDays(1);
                     time = startTime;
