@@ -3,7 +3,7 @@ import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.LocalDateTime;
+
 
 public class Lorry {
 
@@ -34,8 +34,6 @@ public class Lorry {
 
         int availableHour = 23 - avlTime.getHour();
         // int availableMinute = 59 - time.getMinute();
-
-        // System.out.println(availableHour);
 
         System.out.println("Starting Day: " + date);
 
@@ -88,9 +86,3 @@ public class Lorry {
     }
 
 }
-/*
- * i seed distance
- * 80/hr 8hr 640km cus 1000
- * 
- * out date time
- */
