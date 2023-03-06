@@ -23,7 +23,7 @@ public class Lorry {
 
         // LocalDate date = LocalDate.now();
 
-        LocalDate date = LocalDate.of(2023, 03, 04);
+        LocalDate date = LocalDate.of(2023, 1, 25);
         LocalTime time = LocalTime.parse("02:01:50.63");
         LocalTime startTime = time;
 
@@ -45,7 +45,8 @@ public class Lorry {
         while (coveredDistance < tempDistance) {
             DayOfWeek day = date.getDayOfWeek();
 
-            if (day.getValue() == 7) {
+            if (day.getValue() == 7 || (date.getMonthValue() == 1 && date.getDayOfMonth() == 26)
+                    || (date.getMonthValue() == 8 && date.getDayOfMonth() == 15)) {
 
                 date = date.plusDays(1);
 
@@ -68,8 +69,6 @@ public class Lorry {
                     date = date.plusDays(1);
                     time = startTime;
                 }
-
-                // time = startTime;
 
             } else {
                 date = date.plusDays(1);
