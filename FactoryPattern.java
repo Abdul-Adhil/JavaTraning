@@ -3,15 +3,15 @@ import java.util.Scanner;
 public class FactoryPattern {
     public static void main(String[] args) throws Exception {
 
-        Scanner scan = new Scanner(System.in);
-        String car = scan.nextLine();
+        try (Scanner scan = new Scanner(System.in);) {
 
-        scan.close();
-        MahindraCarFactory carFactory = new MahindraCarFactory();
-        CarType carType = carFactory.getInstance(car);
+            String car = scan.nextLine();
 
-        carType.myCar().bodyType();
+            MahindraCarFactory carFactory = new MahindraCarFactory();
+            CarType carType = carFactory.getInstance(car);
 
+            carType.myCar().bodyType();
+        }
     }
 
 }
