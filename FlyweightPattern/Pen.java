@@ -29,7 +29,7 @@ class ThickPen implements Pen {
     }
 }
 
-class ThinPen implements Pen {
+ class ThinPen implements Pen {
 
     final BrushSize brushSize = BrushSize.THIN;
     private String color = null;
