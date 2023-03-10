@@ -11,17 +11,21 @@ public class CopyLineByLine {
 
         try {
             BufferedReader fr = new BufferedReader(
-                    new FileReader("/Users/abduladhil/vs-code/Java-Program/CopyLineByLine/s.txt"));
+                    new FileReader("//Users/abduladhil/vs-code/Java-Program/CopyLineByLineP7/s.txt"));
             PrintWriter fw = new PrintWriter(
-                    new FileWriter("/Users/abduladhil/vs-code/Java-Program/CopyLineByLine/d.txt"));
+                    new FileWriter("/Users/abduladhil/vs-code/Java-Program/CopyLineByLineP7/d.txt"));
             String str = "";
+            int count = 0;
 
             while ((str = fr.readLine()) != null) {
 
-                fw.println(str);
+                if (count < 3) {
+                    fw.println(str);
+                    count++;
+                }
 
             }
-            System.out.println(str);
+            // System.out.println(str);
 
             fr.close();
             fw.close();

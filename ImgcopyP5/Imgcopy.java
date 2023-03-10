@@ -18,7 +18,7 @@ public class Imgcopy {
                     new File("/Users/abduladhil/vs-code/Java-Program/ImgcopyP5/taj-mahal-colored.jpeg"));
             os = new FileOutputStream(
                     new File("/Users/abduladhil/vs-code/Java-Program/ImgcopyP5/taj-mahal-black.jpeg"));
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[2048];
             int length;
             while ((length = is.read(buffer)) != -1) {
                 os.write(buffer);
