@@ -7,7 +7,7 @@ public class CountTheWordP2 {
         Scanner scan = new Scanner(System.in);
 
         String str = scan.nextLine();
-        String[] arrOfStr = str.split(" ");
+        String[] arrOfStr = str.split("\\s+");
 
         for (String a : arrOfStr) {
             System.out.println(a);

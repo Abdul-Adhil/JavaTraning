@@ -57,7 +57,7 @@ public class Files {
         }
         es.execute(() -> {
             try {
-                Thread.sleep(7000);
+                Thread.sleep(8000);
                 renameFile(myFile1);
             } catch (InterruptedException e) {
 
@@ -96,7 +96,6 @@ public class Files {
             File rename = new File("/Users/abduladhil/vs-code/Java-Program/JavaFileP3/renameFile.txt");
             if (myFile.renameTo(rename)) {
                 System.out.println("File Successfully Rename");
-                
 
             } else {
                 System.out.println("Failed to delete the file.");
