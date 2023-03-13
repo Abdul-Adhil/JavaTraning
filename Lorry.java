@@ -46,12 +46,13 @@ public class Lorry {
         while (coveredDistance < tempDistance) {
 
             /*
-             * if it is sunday or it is independence day or republic day if() condition will
+             * if it is sunday or it is independence day or republic day or its a leap year
+             * if() condition will
              * skip that day
              */
             DayOfWeek day = date.getDayOfWeek();
 
-            if (day.getValue() == 7 || (date.getMonthValue() == 1 && date.getDayOfMonth() == 26)
+            if (day.getValue() == 7 || (date.getMonthValue() == 1 && date.getDayOfMonth() == 26 || date.isLeapYear())
                     || (date.getMonthValue() == 8 && date.getDayOfMonth() == 15)) {
 
                 date = date.plusDays(1);
