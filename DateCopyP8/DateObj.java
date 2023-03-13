@@ -26,8 +26,10 @@ public class DateObj {
 
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            Date date = (Date) ois.readObject();
+            Date date =  (Date) ois.readObject();
             System.out.println(date);
+            String st = (String) ois.toString();
+            System.out.println(st);
 
         } catch (IOException e) {
 
